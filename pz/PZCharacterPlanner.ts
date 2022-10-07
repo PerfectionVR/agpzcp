@@ -1,37 +1,30 @@
-import { computed, makeObservable } from "mobx";
 import PZData from "@pz/PZData";
 import PZCharacter from "@pz/PZCharacter";
+import PZMods from "@pz/PZMods";
 
 export default class PZCharacterPlanner {
+  /**
+   * PZMods, contains all mod and preset information.
+   */
+  private readonly _mods: PZMods;
+  /**
+   * PZData, load with mods in order to predict actual state.
+   */
   private readonly _data: PZData;
-  private readonly _character: PZCharacter;
+  /**
+   * PZCharacter
+   */
+  public readonly character: PZCharacter;
 
-  @computed
-  public get availableJobs() {
-    return this._data.jobs;
-  }
-
-  @computed
-  public get availablePositiveTraits() {
-    return this._data.traits.filter(
-      (x) => x.cost < 0 && !this._character.hasTrait(x)
-    );
-  }
-
-  @computed
-  public get availableNegativeTraits() {
-    return this._data.traits.filter(
-      (x) => x.cost >= 0 && !this._character.hasTrait(x)
-    );
-  }
-
-  public get character() {
-    return this._character;
-  }
-
+  /**
+   * PZCharacter planner.
+   */
   public constructor() {
+    this._mods = new PZMods();
     this._data = new PZData();
-    this._character = new PZCharacter(this._data.jobs[0]);
-    makeObservable(this);
+    // Always load first preset by default.
+    this._data.loadModsInOrder(this._mods.presets[0]);
+    // PZCharacter is dependant on having at least one job available.
+    this.character = new PZCharacter(this._data);
   }
 }

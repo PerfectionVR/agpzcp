@@ -18,14 +18,14 @@ export default function Layout({
       <Head>
         <title>{title}</title>
       </Head>
-      <header className="header items-center">
+      <header className="items-center">
         <div className="navbar bg-neutral text-neutral-content">
-          <a className="btn btn-ghost normal-case text-xl">{pkg.name}</a>
+          <a className="btn-ghost btn text-xl normal-case">{pkg.name}</a>
         </div>
       </header>
-      <section className="section">{children}</section>
-      <footer className="footer items-center p-4 bg-neutral text-neutral-content">
-        <div className="items-center grid-flow-col">
+      <section>{children}</section>
+      <footer className="footer items-center bg-neutral p-4 text-neutral-content">
+        <div className="grid-flow-col items-center">
           <p>
             &copy; {new Date(Date.now()).getFullYear().toString() + " "}
             Perfection

@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "vanilla",
+  "traits": [
+    { "id": 1, "name": "Negative Trait", "cost": 1 },
+    { "id": 2, "name": "Positive Trait", "cost": -1 }
+  ],
+  "jobs": [{ "id": 1, "name": "Unemployed", "points": 12 }]
+}
