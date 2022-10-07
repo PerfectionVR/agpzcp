@@ -6,6 +6,7 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -15,7 +16,9 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@components/*": ["./src/components/*"]
+      "@pz/*": ["./pz/*"],
+      "@components/*": ["./components/*"],
+      "@contexts/*": ["./contexts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

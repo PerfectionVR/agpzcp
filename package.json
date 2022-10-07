@@ -9,18 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nextui-org/react": "^1.0.0-beta.10",
-    "next": "12.3.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "latest",
+    "autoprefixer": "^10.4.12",
+    "classnames": "^2.3.2",
+    "daisyui": "^2.31.0",
+    "mobx": "^6.6.2",
+    "mobx-react": "^7.5.3",
+    "mobx-utils": "^6.0.5",
+    "next": "^12.3.1",
+    "postcss": "^8.4.17",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
     "@types/node": "18.8.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
-    "eslint": "8.24.0",
-    "eslint-config-next": "12.3.1",
-    "typescript": "4.8.4"
+    "eslint": "^8.24.0",
+    "eslint-config-next": "^12.3.1",
+    "typescript": "^4.8.4"
   },
   "packageManager": "yarn@3.2.4"
 }
