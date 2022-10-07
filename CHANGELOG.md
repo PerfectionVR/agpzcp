@@ -1,3 +1,8 @@
+# 0.3.0
+
+- wip Mod loader
+- Stricter ruleset
+
 # 0.2.0
 
 - Scaffolding
