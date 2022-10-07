@@ -1,6 +1,12 @@
 # agpzcp
 
+An 'Already Gone' server Project Zomboid Character Planner. AGPZCP in short.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Motivation
+
+I've had my annoyances with finding out what kind of statistics one would have with particular traits, so decided to learn a little more about these mechanics by providing a planner that will elaborate certain stats.
 
 ## Getting Started
 
