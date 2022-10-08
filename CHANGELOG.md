@@ -1,3 +1,9 @@
+# 0.4.0
+
+- update
+- component updates
+- layout idea
+
 # 0.3.0
 
 - wip Mod loader

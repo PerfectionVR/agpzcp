@@ -2,8 +2,8 @@
   "id": 9000,
   "name": "testMod",
   "traits": [
-    { "id": 9001, "name": "Negative Test Trait", "cost": 10 },
-    { "id": 9002, "name": "Positive Test Trait", "cost": -10 }
+    { "name": "Negative Test Trait", "cost": 10 },
+    { "name": "Positive Test Trait", "cost": -10 }
   ],
-  "jobs": [{ "id": 9001, "name": "Test Job", "points": 99 }]
+  "jobs": [{ "name": "Test Job", "points": 99 }]
 }

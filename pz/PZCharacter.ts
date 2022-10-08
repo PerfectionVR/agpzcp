@@ -39,7 +39,7 @@ export default class PZCharacter {
    * Determines if Job is the current job.
    */
   public isJob = computedFn((job: PZJob) => {
-    return this._job.id === job.id;
+    return this._job.name === job.name;
   });
   /**
    * Array of available jobs.
@@ -51,20 +51,20 @@ export default class PZCharacter {
   /**
    * The selected traits.
    */
-  private _traits = new ObservableMap<number, PZTrait>();
+  private _traits = new ObservableMap<string, PZTrait>();
   /**
    * Add trait.
    * @param trait PZTrait
    */
   @action
   public addTrait(trait: PZTrait) {
-    this._traits.set(trait.id, trait);
+    this._traits.set(trait.name, trait);
   }
   /**
    * Determines if the character has the trait.
    */
   public hasTrait = computedFn((trait: PZTrait) => {
-    return this._traits.has(trait.id);
+    return this._traits.has(trait.name);
   });
   /**
    * Remove trait.
@@ -72,7 +72,7 @@ export default class PZCharacter {
    */
   @action
   public removeTrait(trait: PZTrait) {
-    this._traits.delete(trait.id);
+    this._traits.delete(trait.name);
   }
   /**
    * Traits

@@ -22,18 +22,18 @@ export default class PZData {
   /**
    * Job Cache
    */
-  private readonly _jobs = new ObservableMap<number, PZJob>();
+  private readonly _jobs = new ObservableMap<string, PZJob>();
   /**
    * Array of loaded Jobs
    */
   @computed
   public get jobs() {
-    return Array.from(this._jobs.values()).sort((x) => x.id);
+    return Array.from(this._jobs.values());
   }
   /**
    * Trait Cache
    */
-  private readonly _traits = new ObservableMap<number, PZTrait>();
+  private readonly _traits = new ObservableMap<string, PZTrait>();
   /**
    * Array of loaded Traits
    */
@@ -48,12 +48,12 @@ export default class PZData {
    */
   @action
   public loadModsInOrder(mods: PZMod[]) {
-    const jobMap = new Map<number, PZJob>();
-    const traitMap = new Map<number, PZTrait>();
-    for (var i = 0; i < mods.length; i++) {
+    const jobMap = new Map<string, PZJob>();
+    const traitMap = new Map<string, PZTrait>();
+    for (let i = 0; i < mods.length; i++) {
       const mod = mods[i];
-      mod.jobs.forEach((job) => jobMap.set(job.id, job));
-      mod.traits.forEach((trait) => traitMap.set(trait.id, trait));
+      mod.jobs.forEach((job) => jobMap.set(job.name, job));
+      mod.traits.forEach((trait) => traitMap.set(trait.name, trait));
     }
     this._jobs.replace(jobMap);
     this._traits.replace(traitMap);

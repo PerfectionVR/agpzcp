@@ -3,10 +3,6 @@
  */
 type PZJob = {
   /**
-   * In-game ID
-   */
-  id: number;
-  /**
    * In-game name
    */
   name: string;

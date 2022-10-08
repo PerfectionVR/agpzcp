@@ -3,10 +3,6 @@
  */
 type PZTrait = {
   /**
-   * In-game ID
-   */
-  id: number;
-  /**
    * In-game name
    */
   name: string;
@@ -14,6 +10,10 @@ type PZTrait = {
    * In-game cost, can be negative.
    */
   cost: number;
+  /**
+   * In-game description
+   */
+  description: string;
 };
 
 export default PZTrait;

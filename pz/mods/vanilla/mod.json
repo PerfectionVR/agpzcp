@@ -2,8 +2,229 @@
   "id": 1,
   "name": "vanilla",
   "traits": [
-    { "id": 1, "name": "Negative Trait", "cost": 1 },
-    { "id": 2, "name": "Positive Trait", "cost": -1 }
+    {
+      "name": "Speed Demon",
+      "description": "The fast driver.",
+      "cost": -1,
+      "modifiers": {
+        "car": {
+          "gearChangeSpeed": 1,
+          "topSpeed": 0.15,
+          "loudnessReverse": 2
+        }
+      }
+    },
+    {
+      "name": "Cat's Eyes",
+      "description": "Better vision at night.",
+      "cost": -2,
+      "modifiers": {
+        "notImplemented": {
+          "nightvision": 0.2
+        },
+        "foraging": {
+          "searchRadius": 0.4
+        }
+      }
+    },
+    {
+      "name": "Dextrous",
+      "description": "Transfers inventory items quickly.",
+      "cost": -2,
+      "modifiers": {
+        "notImplemented": {
+          "itemTransferTime": -0.5
+        }
+      }
+    },
+    {
+      "name": "Fast Reader",
+      "description": "Takes less time to read books.",
+      "cost": -2,
+      "modifiers": {
+        "notImplemented": {
+          "readSpeed": 0.3
+        }
+      }
+    },
+    {
+      "name": "Outdoorsman",
+      "description": "Not affecte by harsh weather conditions.",
+      "cost": -2,
+      "modifiers": {
+        "notImplemented": {
+          "catchColdChance": -0.9,
+          "injuryFromTreesChance": -0.99
+        },
+        "foraging": {
+          "searchRadius": 0.4,
+          "weatherEffect": -0.13,
+          "darknessEffect": -0.05,
+          "animals:": 0.05,
+          "berries": 0.05,
+          "mushrooms": 0.05,
+          "medicinalPlants": 0.05,
+          "wildPlants": 0.05,
+          "wildHerbs": 0.05
+        }
+      },
+      "notes": "TODO: Starts campfires with nothced planks faster? Implement."
+    },
+    {
+      "name": "Wakeful",
+      "description": "Needs less sleep.",
+      "cost": -2,
+      "modifiers": {
+        "notImplemented": {
+          "sleepNeed": -0.3
+        }
+      }
+    },
+    {
+      "name": "Iron Gut",
+      "description": "Less chance to have food illness.",
+      "cost": -3,
+      "modifiers": {
+        "notImplemented": {
+          "foodIllnessChance": -0.5
+        }
+      },
+      "notes": "TODO: Food illness lasts shorter? Implement"
+    },
+    {
+      "name": "Angler",
+      "description": "Knows how to craft and fix a fishing rod.",
+      "cost": -4,
+      "modifiers": {
+        "skills": {
+          "fishing": 1
+        },
+        "foraging": {
+          "insects": 0.05,
+          "fishBaits": 0.05
+        }
+      },
+      "notes": "TODO: Knows how to craft and fix fishing rod? Implement."
+    },
+    {
+      "name": "Baseball Player",
+      "description": "No description",
+      "cost": -4,
+      "modifiers": {
+        "skills": {
+          "longBlunt": 1
+        }
+      }
+    },
+    {
+      "name": "Brave",
+      "description": "Less prone to becoming panicked.",
+      "cost": -4,
+      "modifiers": {
+        "notImplemented": {
+          "panic": -0.3
+        }
+      },
+      "notes": "TODO: Panic modifier should not affect night terrors and phobias? Implement"
+    },
+    {
+      "name": "First Aider",
+      "description": "No description",
+      "cost": -4,
+      "modifiers": {
+        "skills": {
+          "firstAid": 1
+        },
+        "foraging": {
+          "medicalItems": 0.03
+        }
+      }
+    },
+    {
+      "name": "Gardener",
+      "description": "Knows how to make Mildew Spray and Flies Spray to cure plant diseases.",
+      "cost": -4,
+      "modifiers": {
+        "skills": { "farming": 1 },
+        "foraging": {
+          "searchRadius": 0.4,
+          "weatherEffect": -0.13,
+          "medicinalPlants": 0.03,
+          "crops": 0.05,
+          "fruits": 0.05,
+          "vegetables": 0.05
+        }
+      }
+    },
+    {
+      "name": "Graceful",
+      "description": "Makes less noise while moving.",
+      "cost": -4,
+      "modifiers": {
+        "notImplemented": {
+          "footStepNoise": -0.4,
+          "tripping": {
+            "running": {
+              "vaulting": -0.1
+            },
+            "sprinting": {
+              "vaulting": -0.1
+            }
+          }
+        }
+      },
+      "notes": "TODO: Implement tripping statistics. TODO: Implement stealth."
+    },
+    {
+      "name": "Inconspicuous",
+      "description": "Less likely to be spotted by zombies.",
+      "cost": -4,
+      "modifiers": {
+        "notImplemented": {
+          "spottedChance": -0.5
+        }
+      },
+      "notes": "TODO: Implement stealth."
+    },
+    {
+      "name": "Light Eater",
+      "description": "Needs to eat less regularly.",
+      "cost": -4,
+      "modifiers": {
+        "notImplemented": { "hunger": 0.25 }
+      }
+    },
+    {
+      "name": "Lucky",
+      "description": "Sometimes things just go your way",
+      "cost": -4,
+      "modifiers": {
+        "notImplemented": { "luck": 0.1 },
+        "foraging": {
+          "searchRadius": 1,
+          "forestRarities": 0.05,
+          "medicalItems": 0.05,
+          "ammunition": 0.05,
+          "weapons": 0.05
+        }
+      },
+      "notes": "TODO: Implement luck in calculations. This is very impactful."
+    },
+    {
+      "name": "Nutritionist",
+      "description": "Can see the nutritional values of any food. (Including non-packaged food and cooked food.)",
+      "cost": -4,
+      "modifiers": {
+        "foraging": {
+          "searchRadius": 0.2,
+          "packagedFood": 0.05,
+          "medicinalPlants": 0.05,
+          "wildPlants": 0.05,
+          "wildHerbs": 0.05
+        }
+      },
+      "notes": "TODO: Somehow explain that you can see this on the stats. Implement."
+    }
   ],
-  "jobs": [{ "id": 1, "name": "Unemployed", "points": 12 }]
+  "jobs": [{ "name": "Unemployed", "points": 8 }]
 }
