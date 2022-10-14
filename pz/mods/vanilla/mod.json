@@ -60,7 +60,7 @@
           "searchRadius": 0.4,
           "weatherEffect": -0.13,
           "darknessEffect": -0.05,
-          "animals:": 0.05,
+          "animals": 0.05,
           "berries": 0.05,
           "mushrooms": 0.05,
           "medicinalPlants": 0.05,

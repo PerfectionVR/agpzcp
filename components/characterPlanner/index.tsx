@@ -3,6 +3,8 @@ import { useContext } from "react";
 import characterPlannerContext from "@contexts/characterPlannerContext";
 import JobTable from "@components/characterPlanner/jobTable";
 import TraitTable from "@components/characterPlanner/traitTable";
+import SkillBonusTable from "@components/characterPlanner/skillBonusTable";
+import ForagingBonusTable from "@components/characterPlanner/foragingBonusTable";
 
 export default observer(function CharacterPlanner() {
   const characterPlanner = useContext(characterPlannerContext);
@@ -58,6 +60,16 @@ export default observer(function CharacterPlanner() {
               <p>Available points: {characterPlanner.character.points}</p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="flex-1">
+        <div className="h-96 overflow-y-auto">
+          <SkillBonusTable skills={characterPlanner.character.skillBonus} />
+        </div>
+        <div className="h-96 overflow-y-auto">
+          <ForagingBonusTable
+            foraging={characterPlanner.character.foragingBonus}
+          />
         </div>
       </div>
     </div>

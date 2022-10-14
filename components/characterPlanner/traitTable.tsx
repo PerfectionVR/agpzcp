@@ -29,6 +29,8 @@ const TraitRow = observer(function TraitRow({
       key={trait.name}
       className={cx("cursor-pointer", {
         hover: isHover,
+        "text-error": trait.cost >= 0,
+        "text-success": trait.cost < 0,
       })}
       onMouseOver={() => {
         setIsHover(true);

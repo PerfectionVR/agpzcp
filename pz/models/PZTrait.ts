@@ -14,6 +14,23 @@ type PZTrait = {
    * In-game description
    */
   description: string;
+  /**
+   * In-game modifiers
+   */
+  modifiers?: {
+    /**
+     * Foraging skills. Dynamic.
+     */
+    foraging?: {
+      [x: string]: number;
+    };
+    /**
+     * Major skills. Dynamic.
+     */
+    skills?: {
+      [x: string]: number;
+    };
+  };
 };
 
 export default PZTrait;

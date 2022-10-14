@@ -9,6 +9,7 @@ import { computedFn } from "mobx-utils";
 import PZJob from "@pz/models/PZJob";
 import PZTrait from "@pz/models/PZTrait";
 import PZData from "@pz/PZData";
+import { Decimal } from "decimal.js";
 
 /**
  * PZCharacter, contains public methods to manipulate a character and offers statistics.
@@ -100,9 +101,43 @@ export default class PZCharacter {
    */
   @computed
   public get points() {
-    return this.traits.reduce((points, b) => {
-      return points + b.cost;
+    return this.traits.reduce((points, trait) => {
+      return points + trait.cost;
     }, this._job.points);
+  }
+
+  /**
+   * Calculated foraging bonus.
+   */
+  @computed
+  public get foragingBonus() {
+    return this.traits.reduce<{ [k: string]: Decimal }>((foraging, trait) => {
+      for (const k in trait.modifiers?.foraging) {
+        if (!foraging[k]) {
+          foraging[k] = new Decimal(0);
+        }
+        foraging[k] = new Decimal(foraging[k]).add(
+          trait.modifiers?.foraging[k] ?? 0
+        );
+      }
+      return foraging;
+    }, {});
+  }
+
+  /**
+   * Calculated skill bonus.
+   */
+  @computed
+  public get skillBonus() {
+    return this.traits.reduce<{ [k: string]: number }>((skills, trait) => {
+      for (const k in trait.modifiers?.skills) {
+        if (!skills[k]) {
+          skills[k] = 0;
+        }
+        skills[k] += trait.modifiers?.skills[k] ?? 0;
+      }
+      return skills;
+    }, {});
   }
 
   /**
