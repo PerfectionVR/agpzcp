@@ -10,7 +10,9 @@ const JobTableHeader = observer(function JobTableHeader({
 }) {
   return (
     <thead>
-      <th>{title}</th>
+      <tr>
+        <th>{title}</th>
+      </tr>
     </thead>
   );
 });

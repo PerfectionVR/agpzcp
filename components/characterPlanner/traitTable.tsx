@@ -10,8 +10,10 @@ const TraitTableHeader = observer(function TraitTableHeader({
 }) {
   return (
     <thead>
-      <th>{title}</th>
-      <th>Cost</th>
+      <tr>
+        <td>{title}</td>
+        <td>Cost</td>
+      </tr>
     </thead>
   );
 });

@@ -15,8 +15,10 @@ const SkillBonusBoost = observer(function SkillBonusBoost({
 const SkillBonusTableHeader = observer(function SkillBonusTableHeader() {
   return (
     <thead>
-      <th>Skill Bonus</th>
-      <th>Bonus</th>
+      <tr>
+        <th>Skill Bonus</th>
+        <th>Bonus</th>
+      </tr>
     </thead>
   );
 });

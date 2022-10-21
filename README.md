@@ -1,6 +1,6 @@
-# agpzcp
+# pzcp
 
-An 'Already Gone' server Project Zomboid Character Planner. AGPZCP in short.
+A Project Zomboid Character Planner with mod support. PZCP in short.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

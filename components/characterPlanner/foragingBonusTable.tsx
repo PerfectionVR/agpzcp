@@ -4,8 +4,10 @@ import { observer } from "mobx-react";
 const ForagingBonusTableHeader = observer(function ForagingBonusTableHeader() {
   return (
     <thead>
-      <th>Foraging</th>
-      <th>Bonus</th>
+      <tr>
+        <th>Foraging</th>
+        <th>Bonus</th>
+      </tr>
     </thead>
   );
 });
